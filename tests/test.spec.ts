@@ -9,7 +9,13 @@ test.beforeEach(async ({ page }) => {
   await expect.soft(page, 'Verify home page URL').toHaveURL(/cs\/obcane/);
 });
 
-test('KB Playwright test', async ({ 
+test('KB Playwright test', {
+  annotation: {
+    type: 'test',
+    description: 'This test will pass if the user is able to see 10 branches in Kladno.',
+  },
+  tag: ['@fast'],
+}, async ({ 
   page, 
   context,
   homePage, 
@@ -18,11 +24,6 @@ test('KB Playwright test', async ({
   meetingAtBranchModal, 
   searchBranchModal, 
   selectBranchModal }) => {
-
-  test.info().annotations.push({
-    type: 'Test',
-    description: 'This test will pass if the user is able to see 10 branches in Kladno.',
-  });
 
   await test.step('Accept cookies', async () => {
     await homePage.acceptCookies();
