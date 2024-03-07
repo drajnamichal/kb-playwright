@@ -30,7 +30,7 @@ npm install
 npx playwright install
 ```
 
-## Running the automated checks
+## Running the automated test
 
 ```bash
 npx playwright test
