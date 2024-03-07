@@ -36,4 +36,9 @@ npx playwright install
 npx playwright test
 ```
 
+To run a test on a TEST1 or TEST2 test environment, define the TEST_ENV variable before the test run command.
+```bash
+TEST_ENV=TEST1 npx playwright test
+```
+
 Happy Playwright Testing 🎭
