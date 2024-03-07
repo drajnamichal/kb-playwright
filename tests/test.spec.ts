@@ -29,11 +29,8 @@ test('KB Playwright test', {
     await homePage.acceptCookies();
   });
 
-  await test.step('Refresh the page', async () => {
-    await page.reload();
-  });
-
-  await test.step('Get cookies', async () => {
+  await test.step('Wait for the cookies', async () => {
+    await page.waitForTimeout(1000);
     storageState = await context.storageState();
   });
   
@@ -68,7 +65,7 @@ test('KB Playwright test', {
   });
 
   await test.step('Enter details', async () => {
-    await meetingAtBranchModal.enterName(faker.person.firstName() + ' ' + faker.person.lastName());
+    await meetingAtBranchModal.enterName('Ján Srna');
     await meetingAtBranchModal.enterPhone(process.env.MOBILE_NUMBER!);
     await meetingAtBranchModal.enterEmail(faker.internet.email());
   });

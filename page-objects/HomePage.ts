@@ -29,6 +29,6 @@ export class HomePage {
 
   async goToEnterpreneursAndCompanies() {
     await this.enterpreneursAndCompaniesButton.first().click();
-    await this.page.waitForLoadState('load');
+    await this.page.waitForLoadState('domcontentloaded');
   }
 }
